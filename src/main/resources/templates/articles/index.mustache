@@ -1,0 +1,23 @@
+{{>layouts/header}}
+<div style="margin-top:50px; float:right">
+    <a href="/articles/new" style="text-decoration: none; font-size: 24px; "><i class="bi bi-pencil-square">글 쓰기</i></a></div>
+<table class="table" style="margin-top:50px">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#articleList}} <!--해당 변수가 묶음일때는 반복해줌-->
+        <tr>
+            <th>{{id}}</th>
+            <!-- 제목에 링크 걸기 -->
+            <td><a href="/articles/{{id}}">{{title}}</a></td>
+            <td>{{content}}</td>
+        </tr>
+    {{/articleList}}
+    </tbody>
+</table>
+{{>layouts/footer}}
